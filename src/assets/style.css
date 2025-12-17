@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+
+.block-content {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+h1 {
+  font-family: "Forum", sans-serif;
+  font-size: 6rem;
+  color: #ffffff;
+}
+
+h2 {
+  font-family: "Forum", sans-serif;
+  font-size: 64px;
+  color: #ffffff;
+}
+
+h3 {
+  font-family: "Forum", sans-serif;
+  font-size: 3rem !important;
+}
+
+h4 {
+  font-family: "Forum", sans-serif;
+  font-size: 2.5rem !important;
+  color: #ffffff;
+}
+
+h5 {
+  font-family: "Forum", sans-serif;
+  font-size: 24px;
+}
+
+h6 {
+}
+
+.mt-15rem {
+  margin-top: 20rem;
+}
+
+.mt-35rem {
+  margin-top: 60rem;
+}
+
+.header-image {
+  margin-top: 12rem;
+}
+
+.btn1-default {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+}
+.btn1-hover {
+  color: #000000;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+}
+
+.text-black {
+  color: #000000 !important;
+}
