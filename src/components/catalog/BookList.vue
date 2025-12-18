@@ -1,42 +1,82 @@
 <template>
-  <div class="mt-35rem">
-    <h2 class="carousel-title">БИБЛИОТЕКА</h2>
-    <ul>
-      <li @click="clearFilters">Каталог</li>
-      <li @click="toggleGenre('Классика')">Классика</li>
-      <li @click="toggleGenre('Приключения')">Приключения</li>
-      <li @click="toggleGenre('Сказки')">Сказки</li>
+  <div class="mt-50rem">
+    <h2 class="carousel-title">
+      БИБЛИОТЕКА
+    </h2>
+    <ul class="list-unstyled d-flex justify-content-around">
+      <li
+        class="filter-item"
+        @click="clearFilters"
+      >
+        <h4>Каталог</h4>
+      </li>
+      <li
+        class="filter-item"
+        @click="toggleGenre('Классика')"
+      >
+        <h4>Классика</h4>
+      </li>
+      <li
+        class="filter-item"
+        @click="toggleGenre('Приключения')"
+      >
+        <h4>Приключения</h4>
+      </li>
+      <li
+        class="filter-item"
+        @click="toggleGenre('Сказки')"
+      >
+        <h4>Сказки</h4>
+      </li>
     </ul>
-    <div v-for="book in filteredBooks" :key="book.id">
-      <BookItem :book="book" class="books-grid"></BookItem>
+    <div class="books-grid">
+      <div
+        v-for="book in filteredBooks"
+        :key="book.id"
+      >
+        <BookItem
+          :book="book"
+          class="books-grid"
+        />
+      </div>
     </div>
     <!-- Кастомная навигация -->
-    <div
+    <!-- <div
       class="custom-navigation d-flex justify-content-center align-items-center"
     >
       <a
         class="nav-btn prev-btn"
-        @click="prevPage"
         :disabled="currentPage === 1"
+        @click="prevPage"
       >
-        <img src="@/assets/icons/right-arrow.png" width="7rem" />
+        <img
+          src="@/assets/icons/right-arrow.png"
+          width="7rem"
+        >
       </a>
 
       <div
         class="page-indicator d-flex justify-content-center align-items-center"
       >
-        <h4 class="current-page">{{ currentPage }}</h4>
-        <h4 class="total-pages">/ {{ totalPages }}</h4>
+        <h4 class="current-page">
+          {{ currentPage }}
+        </h4>
+        <h4 class="total-pages">
+          / {{ totalPages }}
+        </h4>
       </div>
 
       <a
         class="nav-btn next-btn"
-        @click="nextPage"
         :disabled="currentPage === totalPages"
+        @click="nextPage"
       >
-        <img src="@/assets/icons/left-arrow.png" width="7rem" />
+        <img
+          src="@/assets/icons/left-arrow.png"
+          width="7rem"
+        >
       </a>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -44,12 +84,12 @@
 import { ref, computed } from "vue";
 import BookItem from "../BookItem.vue";
 
-const selectedGenre = ref([]);
+const selectedGenre = ref('');
 const books = ref([
   {
     id: 1,
     title: "Вино из одуванчиков",
-    author: "Рей Брэдбери",
+    author: "Р. Брэдбери",
     price: 650,
     genre: "Приключения",
     image: require("@/assets/books/book1.png"),
@@ -57,7 +97,7 @@ const books = ref([
   {
     id: 2,
     title: "Легенды и мифы Древней Греции",
-    author: "Николай Кун",
+    author: "Н. Кун",
     price: 890,
     genre: "Приключения",
     image: require("@/assets/books/book2.png"),
@@ -65,7 +105,7 @@ const books = ref([
   {
     id: 3,
     title: "Двадцать тысяч лье под водой",
-    author: "Жюль Верн",
+    author: "Ж. Верн",
     price: 750,
     genre: "Классика",
     image: require("@/assets/books/book3.png"),
@@ -73,7 +113,7 @@ const books = ref([
   {
     id: 4,
     title: "Мастер и Маргарита",
-    author: "Михаил Булгаков",
+    author: "М. Булгаков",
     price: 820,
     genre: "Классика",
     image: require("@/assets/books/book4.png"),
@@ -97,7 +137,7 @@ const books = ref([
   {
     id: 7,
     title: "Собор Парижской Богоматери",
-    author: "Виктор Гюго",
+    author: "В. Гюго",
     price: 770,
     genre: "Приключения",
     image: require("@/assets/books/book7.png"),
@@ -105,7 +145,7 @@ const books = ref([
   {
     id: 8,
     title: "Алиса в Стране чудес и в Зазеркалье",
-    author: "Льюис Кэролл",
+    author: "Л. Кэролл",
     price: 680,
     genre: "Сказки",
     image: require("@/assets/books/book8.png"),
@@ -113,7 +153,7 @@ const books = ref([
   {
     id: 9,
     title: "Робинзон Крузо",
-    author: "Даниель Дефо",
+    author: "Д. Дефо",
     price: 590,
     genre: "Приключения",
     image: require("@/assets/books/book9.png"),
@@ -121,7 +161,7 @@ const books = ref([
   {
     id: 10,
     title: "Портрет Дориана Грея",
-    author: "Оскар Уайльд",
+    author: "О. Уайльд",
     price: 710,
     genre: "Философский роман, Готика",
     image: require("@/assets/books/book10.png"),
@@ -129,7 +169,7 @@ const books = ref([
   {
     id: 11,
     title: "Алые паруса",
-    author: "Александр Грин",
+    author: "А. Грин",
     price: 550,
     genre: "Приключения",
     image: require("@/assets/books/book11.png"),
@@ -137,7 +177,7 @@ const books = ref([
   {
     id: 12,
     title: "Три мушкетера",
-    author: "Александр Дюма",
+    author: "А. Дюма",
     price: 850,
     genre: "Приключения",
     image: require("@/assets/books/book12.png"),
@@ -145,7 +185,7 @@ const books = ref([
   {
     id: 13,
     title: "Евгений Онегин",
-    author: "Александр Пушкин",
+    author: "А. Пушкин",
     price: 630,
     genre: "Классика",
     image: require("@/assets/books/book13.png"),
@@ -153,7 +193,7 @@ const books = ref([
   {
     id: 14,
     title: "Мертвые души",
-    author: "Николай Гоголь",
+    author: "Н. Гоголь",
     price: 730,
     genre: "Классика",
     image: require("@/assets/books/book14.png"),
@@ -161,7 +201,7 @@ const books = ref([
   {
     id: 15,
     title: "Обломов",
-    author: "Иван Гончаров",
+    author: "И. Гончаров",
     price: 690,
     genre: "Классика",
     image: require("@/assets/books/book15.png"),
@@ -169,35 +209,25 @@ const books = ref([
 ]);
 
 const filteredBooks = computed(() => {
-  if (selectedGenre.value.length === 0) {
-    return books.value; // Если нет выбранных жанров, показываем все
+  if (!selectedGenre.value) {
+    return books.value;
   }
 
-  return books.value.filter((book) => {
-    const bookGenres = book.genre.includes(",")
-      ? book.genre.split(",").map((g) => g.trim())
-      : [book.genre];
-
-    return bookGenres.some((genre) => selectedGenre.value.includes(genre));
-  });
+  return books.value.filter((book) => 
+    book.genre == selectedGenre.value
+  );
 });
 
 const toggleGenre = (genre) => {
-  console.log(genre);
-  const index = selectedGenre.value.indexOf(genre);
-  if (index === -1) {
-    selectedGenre.value.push(genre); // Добавляем жанр
-  } else {
-    selectedGenre.value.splice(index, 1); // Удаляем жанр
-  }
+  selectedGenre.value = genre;
 };
 
 const clearFilters = () => {
-  selectedGenre.value = [];
+  selectedGenre.value = null;
 };
 
 // Пагинация
-const itemsPerPage = 9;
+/*const itemsPerPage = 9;
 const currentPage = ref(1);
 
 const totalPages = computed(() => {
@@ -210,6 +240,8 @@ const displayedBooks = computed(() => {
   return this.filteredBooks.slice(start, end);
 });
 
+console.log(displayedBooks);
+
 const nextPage = () => {
   if (currentPage.value < totalPages.value) {
     currentPage.value++;
@@ -220,7 +252,7 @@ const prevPage = () => {
   if (currentPage.value > 1) {
     currentPage.value--;
   }
-};
+};*/
 </script>
 
 <style>
@@ -229,44 +261,10 @@ const prevPage = () => {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
+  place-items: center;
 }
 
-.navigation-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 2rem;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ddd;
-  border: none;
+.filter-item:hover {
   cursor: pointer;
-  padding: 0;
-  transition: all 0.3s ease;
-}
-
-.dot:hover {
-  background: #aaa;
-}
-
-.dot.active {
-  background: #667eea;
-  transform: scale(1.2);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 </style>

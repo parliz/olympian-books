@@ -1,35 +1,46 @@
 <template>
   <div class="about-container">
-    <!-- <section > -->
-    <img class="item-1 about-section" src="@/assets/images/book.png" />
-    <!-- </section> -->
+    <section class="d-flex justify-content-end">
+      <img
+        class="item-1 about-section"
+        src="@/assets/images/book.png"
+      >
+    </section>
 
     <section class="item-2 about-description">
-      <h2>О НАС</h2>
-      <p>
+      <h2 class="txt-wh d-flex justify-content-center">
+        О НАС
+      </h2>
+      <h5 class="txt-wh">
         Книжное наследие от мыслителей Древней Греции и до людей современности.
         Это не просто магазин, а настоящий клуб любителей книги, который
         объединяет в своем культурном пространстве людей самых разных интересов.
-      </p>
+      </h5>
     </section>
 
-    <section class="item-3 harmony-description">
-      <h2>ГАРМОНИЯ</h2>
-      <p>
-        Наш проект «Гармония» объединяет читателей и авторов в реальности и в
-        интернете. Каждую неделю проводятся встречи онлайн и вживую. Из наших
-        регулярных рубрик вы узнаете много нового о книгах и писателях.
-      </p>
+    <section class="d-flex justify-content-end">
+      <div class="item-3 harmony-description ">
+        <h2 class="txt-wh d-flex justify-content-center">
+          ГАРМОНИЯ
+        </h2>
+        <h5 class="txt-wh">
+          Наш проект «Гармония» объединяет читателей и авторов в реальности и в 
+          интернете. Каждую неделю проводятся встречи онлайн и вживую. Из наших
+          регулярных рубрик вы узнаете много нового о книгах и писателях.
+        </h5>
+      </div>
     </section>
 
-    <!-- <section > -->
-    <img class="item-4 harmony-section" src="@/assets/images/harmony.png" />
-    <!-- </section> -->
+    <section>
+      <img
+        class="item-4 harmony-section"
+        src="@/assets/images/harmony.png"
+      >
+    </section>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
 </script>
 
 <style>
@@ -45,32 +56,37 @@ export default {};
 }
 
 .about-container {
-  margin-top: 4.5rem;
+  margin-top: 8.5rem;
   display: grid;
   grid-template-areas:
     "top-left top-right"
     "bottom-left bottom-right";
   /*grid-template-columns: 0fr 0fr;*/
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0;
   min-height: 300px;
+  font-family: "Raleway", sans-serif;
 }
 
 .item-1 {
   grid-area: top-left;
   max-width: 50rem;
   max-height: 50rem;
+  display: flex;
+    justify-content: end;
 }
 .item-2 {
   grid-area: top-right;
   max-width: 50rem;
   max-height: 50rem;
+  padding: 10rem;
 }
 .item-3 {
   grid-area: bottom-left;
   max-width: 50rem;
   max-height: 50rem;
+  padding: 10rem;
 }
 .item-4 {
   grid-area: bottom-right;
@@ -78,9 +94,9 @@ export default {};
   max-height: 50rem;
 }
 
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
   .about-container {
-    /*display: grid;
+ display: grid;
   grid-template-areas:
     "top-left top-right"
     "bottom-left bottom-right";
@@ -101,7 +117,7 @@ export default {};
   }
   .item-4 {
     grid-area: bottom-right;
-  }*/
   }
-}
+  }
+}*/
 </style>

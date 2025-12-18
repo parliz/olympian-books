@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
 .block-content {
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 7rem !important;
+  margin-right: 7rem !important;
 }
 
 h1 {
   font-family: "Forum", sans-serif;
   font-size: 6rem;
-  color: #ffffff;
+  line-height: 9rem !important;
+  letter-spacing: 0.5rem;
 }
 
 h2 {
   font-family: "Forum", sans-serif;
-  font-size: 64px;
-  color: #ffffff;
+  font-size: 4.5rem;
 }
 
 h3 {
@@ -24,13 +25,13 @@ h3 {
 
 h4 {
   font-family: "Forum", sans-serif;
-  font-size: 2.5rem !important;
-  color: #ffffff;
+  font-size: 2rem !important;
+  
 }
 
 h5 {
   font-family: "Forum", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 h6 {
@@ -40,17 +41,21 @@ h6 {
   margin-top: 20rem;
 }
 
-.mt-35rem {
-  margin-top: 60rem;
+.mt-50rem {
+  padding-top: 50rem;
 }
 
 .header-image {
-  margin-top: 12rem;
+  margin-top: 8rem;
+}
+
+.btn-custom {
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
 }
 
 .btn1-default {
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 0.2rem solid #ffffff;
   background-color: transparent;
 }
 .btn1-hover {
@@ -59,6 +64,24 @@ h6 {
   background-color: #ffffff;
 }
 
-.text-black {
+.btn2-default {
+  color: #000000;
+  border: 2px solid #000000;
+  background-color: transparent;
+}
+
+.txt-bl {
   color: #000000 !important;
+}
+
+.txt-wh {
+  color: #ffffff !important;
+}
+
+.subtitle {
+  line-height: 120px;
+}
+
+.logo-section {
+  margin: 3rem 1rem 7rem 0;
 }

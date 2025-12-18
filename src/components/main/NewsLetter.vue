@@ -7,17 +7,27 @@
       Подпишитесь на нашу новостную рассылку
     </h5>
 
-    <div class="d-flex justify-content-center gap-3 mt-4">
+    <div class="d-flex justify-content-center gap-3 email-input">
       <div class="input-wrapper">
-        <input v-model="email" class="input-check" />
+        <input
+          v-model="email"
+          class="input-check"
+        >
         <img
           v-if="emailCheckIcon"
           :src="emailCheckIcon"
           width="1rem"
           class="check-icon"
-        />
+        >
       </div>
-      <button class="btn1-press" @click="sendEmail">Отправить</button>
+      <button
+        class="send-btn btn1-hover"
+        @click="sendEmail"
+      >
+        <h4>
+          ОТПРАВИТЬ
+        </h4>
+      </button>
     </div>
   </div>
 </template>
@@ -46,15 +56,24 @@ const sendEmail = () => {
   margin-top: 6.5rem;
   margin-bottom: 4.5rem;
 }
-
+.email-input {
+  margin-top: 2.5rem !important;
+}
 .input-check {
   font-size: 1.5rem;
-  width: 35rem;
+  width: 40rem;
+  border: 3px solid #000000;
+  height: 100%;
 }
 
 .check-icon {
   width: 1.5rem;
   margin-left: -2rem;
   margin-top: -1rem;
+}
+
+.send-btn {
+  width: 15rem;
+  border: 3px solid #000000;
 }
 </style>

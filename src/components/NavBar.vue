@@ -1,9 +1,12 @@
 <template>
-  <nav class="navbar sticky-top px-5">
+  <nav class="navbar sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">
+      <a
+        class="navbar-brand"
+        href="/"
+      >
         <h5 class="logo mb-0">
-          OLYMPIANS <br />
+          OLYMPIANS <br>
           BOOKS
         </h5>
       </a>
@@ -12,42 +15,65 @@
         <button
           class="btn p-0 border-0 bg-transparent menu-button"
           type="button"
-          @click="toggleMenu"
           :aria-expanded="isMenuOpen"
+          @click="toggleMenu"
         >
           <img
             src="@/assets/icons/down-arrow.png"
             alt="Меню"
-            height="20"
+            height="30"
             class="arrow-icon"
-          />
+          >
         </button>
 
-        <div v-if="isMenuOpen" class="dropdown" ref="dropdownRef">
+        <div
+          v-if="isMenuOpen"
+          ref="dropdownRef"
+          class="dropdown"
+        >
           <div class="menu-item">
             <img
               src="@/assets/icons/up-arrow.png"
               alt="Меню"
               height="20"
               @click="toggleMenu"
-            />
+            >
           </div>
 
-          <RouterLink class="menu-item" to="/"
-            ><h5 @click="closeMenu">Главная</h5></RouterLink
+          <RouterLink
+            class="menu-item"
+            to="/"
           >
-          <RouterLink class="menu-item" to="/catalog"
-            ><h5 @click="closeMenu">Каталог</h5></RouterLink
+            <h5 @click="closeMenu">
+              Главная
+            </h5>
+          </RouterLink>
+          <RouterLink
+            class="menu-item"
+            to="/catalog"
           >
-          <RouterLink class="menu-item" to="/cart"
-            ><h5 @click="closeMenu">Корзина</h5></RouterLink
+            <h5 @click="closeMenu">
+              Каталог
+            </h5>
+          </RouterLink>
+          <RouterLink
+            class="menu-item"
+            to="/cart"
           >
+            <h5 @click="closeMenu">
+              Корзина
+            </h5>
+          </RouterLink>
         </div>
       </div>
 
       <div>
         <RouterLink to="/cart">
-          <img src="@/assets/icons/cart.png" alt="Cart" height="38px" />
+          <img
+            src="@/assets/icons/cart.png"
+            alt="Cart"
+            height="50px"
+          >
         </RouterLink>
       </div>
     </div>
@@ -72,6 +98,8 @@ const closeMenu = async () => {
 .navbar {
   height: 80px;
   background-color: #1596c1;
+      padding-right: 7rem !important;
+    padding-left: 7rem !important;
 }
 
 .logo {

@@ -1,23 +1,18 @@
 <template>
-  <NavBar></NavBar>
+  <NavBar />
   <RouterView />
-  <Footer />
+  <TheFooter />
 </template>
 
-<script>
+<script setup>
 import NavBar from "./components/NavBar.vue";
-import Footer from "./components/TheFooter.vue";
+import TheFooter from "./components/TheFooter.vue";
 
-export default {
-  name: "App",
-  components: {
-    NavBar,
-    Footer,
-  },
-};
+// export default {
+//   name: "App",
+//   components: {
+//     NavBar,
+//     TheFooter,
+//   },
+// };
 </script>
-
-<style>
-#app {
-}
-</style>

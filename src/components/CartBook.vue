@@ -2,33 +2,48 @@
   <div class="cart-book">
     <div class="row">
       <div class="col-md-1">
-        <img :src="cartBook.image" width="100" height="150" />
+        <img
+          :src="cartBook.image"
+          width="100"
+          height="150"
+        >
       </div>
-      <h4 class="col-md-5 text-black">
+      <h4 class="col-md-5 text-black d-flex align-items-center">
         {{ cartBook.author + " " + cartBook.title }}
       </h4>
-      <h4 class="col-md-1 text-black">{{ cartBook.price }}</h4>
-      <div class="col-md-3 d-flex">
+      <h4 class="col-md-1 text-black d-flex align-items-center">
+        {{ cartBook.price }} р.
+      </h4>
+      <div class="col-md-3 d-flex align-items-center justify-content-center gap-4">
         <img
           src="@/assets/icons/minus.png"
-          @click="reduceQuantity(cartBook)"
           width="20rem"
           height="4rem"
-        />
-        <h4 class="text-black">{{ cartBook.quantity }}</h4>
+          @click="reduceQuantity(cartBook)"
+        >
+        <h4 class="text-black">
+          {{ cartBook.quantity }}
+        </h4>
         <img
           src="@/assets/icons/plus.png"
-          @click="increaseQuantity(cartBook)"
           width="20rem"
           height="20rem"
-        />
+          @click="increaseQuantity(cartBook)"
+        >
       </div>
 
-      <h4 class="col-md-1 text-black">
-        {{ cartBook.price * cartBook.quantity }}
+      <h4 class="col-md-1 text-black d-flex align-items-center">
+        {{ cartBook.price * cartBook.quantity }} р.
       </h4>
-      <a class="col-md-1 text-black" @click="removeFromCart(cartBook.id)">
-        <img src="@/assets/icons/delete.png" width="20rem" />
+      <a
+        class="col-md-1 d-flex text-black justify-content-end align-items-center"
+        @click="removeFromCart(cartBook.id)"
+      >
+        <img
+          src="@/assets/icons/delete.png"
+          width="20rem"
+          height="20rem"
+        >
       </a>
     </div>
   </div>
@@ -37,12 +52,11 @@
 <script setup>
 import { useCart } from "@/composables/useCart";
 
-const props = defineProps({
+defineProps({
   cartBook: Object,
 });
 
-const { removeFromCart, clearCart, totalPrice, totalItems, updateQuantity } =
-  useCart();
+const { removeFromCart, updateQuantity } = useCart();
 
 const reduceQuantity = (book) => {
   updateQuantity(book.id, book.quantity - 1);

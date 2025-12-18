@@ -1,28 +1,32 @@
 <template>
-  <footer class="footer-content text-white px-5">
+  <footer class="footer-content text-white">
     <div class="container-fluid">
-      <!-- <div class="container d-flex gap-5"> -->
-      <div class="d-flex gap=4">
-        <a class="navbar-brand item" href="/">
-          <h5 class="logo">
-            OLYMPIANS <br />
+      <div class="block-content d-flex justify-content-between align-items-center">
+        <a
+          class="navbar-brand item"
+          href="/"
+        >
+          <h4 class="logo">
+            OLYMPIANS <br>
             BOOKS
-          </h5></a
-        >
-        <a href="#" class="text-white-50 text-decoration-none item"
-          >+30922040281</a
-        >
+          </h4></a>
+        <a
+          href="#"
+          class="text-white-50 text-decoration-none item"
+        ><h4>+30922040281</h4></a>
+        <a
+          href="/"
+          class="text-white-50 text-decoration-none item"
+        ><h4>Главная</h4></a>
+        <a
+          href="/catalog"
+          class="text-white-50 text-decoration-none item"
+        ><h4>Каталог</h4></a>
+        <a
+          href="/cart"
+          class="text-white-50 text-decoration-none item"
+        ><h4>Корзина</h4></a>
       </div>
-      <div class="d-flex gap-4">
-        <a href="/" class="text-white-50 text-decoration-none item">Главная</a>
-        <a href="/catalog" class="text-white-50 text-decoration-none item"
-          >Каталог</a
-        >
-        <a href="/cart" class="text-white-50 text-decoration-none item"
-          >Корзина</a
-        >
-      </div>
-      <!-- </div> -->
 
       <!-- <div class="row">
           <div class="col-8 col-md-3 col-lg-3">
@@ -37,13 +41,29 @@
   </footer>
 </template>
 
-<script>
-export default {};
+<script setup>
 </script>
 
 <style>
 .footer-content {
   background-color: #1596c1;
+  /*position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;*/
+}
+
+/*.footer {
+  position: relative;
+}*/
+
+.footer.is-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /*.container {

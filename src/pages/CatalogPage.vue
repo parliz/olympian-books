@@ -3,45 +3,52 @@
     <div class="container-fluid">
       <div class="header-image">
         <img
+          ref="libImage"
           src="@/assets/images/desktop-library-background.png"
           class="full-width-image"
           height="940px"
           width="1440px"
-        />
+        >
       </div>
 
       <div class="position-relative z-1">
         <div class="logo-section">
           <div
-            class="collapse navbar-collapse"
             id="navbarSupportedContent"
-          ></div>
+            class="collapse navbar-collapse"
+          />
 
-          <h1>
-            СОБРАНИЕ <br />
+          <h1 class="subtitle txt-wh">
+            СОБРАНИЕ <br>
             ДРЕВНИХ ЗНАНИЙ
           </h1>
         </div>
 
-        <button class="custom-btn" @click="showMore">УЗНАТЬ БОЛЬШЕ</button>
+        <button
+          class="btn1-default btn-custom"
+          @click="showMore"
+        >
+          <h3 class="txt-wh">
+            УЗНАТЬ БОЛЬШЕ
+          </h3>
+        </button>
       </div>
       <BookList />
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import BookList from "../components/catalog/BookList.vue";
-export default {
-  name: "OlympiansBooks",
-  methods: {
-    showMore() {
-      // TODO: логика для кнопки УЗНАТЬ БОЛЬШЕ
-    },
-  },
-  components: {
-    BookList,
-  },
+import {ref} from 'vue';
+
+const libImage = ref(null)
+const showMore = () => {
+    const imgBound = libImage.value.getBoundingClientRect();
+  window.scrollTo({
+    top: imgBound.top + imgBound.height,
+    behavior: 'smooth'
+  })
 };
 </script>
 
